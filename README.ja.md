@@ -1,25 +1,10 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7F1D1D,50:4C1D95,100:1E3A5F&height=200&section=header&text=CUA%20Desktop%20Operator%20Skill&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=40&desc=Windows%20%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%20%C2%B7%20MCP%20%E3%83%8D%E3%82%A4%E3%83%86%E3%82%A3%E3%83%96%20%C2%B7%20Agent%20%E4%B8%AD%E7%AB%8B&descAlignY=58&descSize=18" width="100%"/>
+
 <br/>
 
-```
- ██████╗██╗   ██╗ █████╗     ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗
-██╔════╝██║   ██║██╔══██╗    ██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
-██║     ██║   ██║███████║    ██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
-██║     ██║   ██║██╔══██║    ██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝
-╚██████╗╚██████╔╝██║  ██║    ██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║
- ╚═════╝ ╚═════╝ ╚═╝  ╚═╝    ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝
-                         ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗ ██████╗ ██████╗
-                        ██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
-                        ██║   ██║██████╔╝█████╗  ██████╔╝███████║   ██║   ██║   ██║██████╔╝
-                        ██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██╔══██║   ██║   ██║   ██║██╔══██╗
-                        ╚██████╔╝██║     ███████╗██║  ██║██║  ██║   ██║   ╚██████╔╝██║  ██║
-                         ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
-```
-
-### **Windows ファースト · MCP ネイティブ · Agent 中立**
-
-> 一つの実行レイヤー。すべての MCP 対応 AI Agent。クラウド依存ゼロ。
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=3000&pause=800&color=DC2626&center=true&vCenter=true&width=600&lines=One+execution+layer.+Any+MCP-capable+agent.;Zero+cloud+dependency.+100%25+local.;Codex+%C2%B7+Claude+Code+%C2%B7+Cursor+%C2%B7+OpenCode)](https://github.com/Marways7/cua_desktop_operator_skill)
 
 <br/>
 
@@ -144,56 +129,42 @@ agent（Codex / Claude Code / Cursor / OpenCode / ...）
 
 ```mermaid
 flowchart TB
-    subgraph Agents["AI Agent 層"]
-        A1["Codex"]
-        A2["Claude Code"]
-        A3["Cursor"]
-        A4["OpenCode"]
-        A5["その他の MCP クライアント"]
+    subgraph AGT["AI Agent 層"]
+        direction LR
+        A1["Codex"] & A2["Claude Code"] & A3["Cursor"] & A4["OpenCode"]
     end
 
-    subgraph Skill["スキル層  •  SKILL.md + references/ + scripts/"]
-        B["スキルインターフェース\n（ワークフロー、ポリシー、セットアップガイド）"]
+    subgraph SKL["スキル層"]
+        S1["SKILL.md · references/ · scripts/"]
     end
 
-    subgraph MCP["MCP 層  •  desktop_operator_mcp/"]
-        C["desktop-operator\nMCP サーバー（stdio）"]
+    subgraph MCPL["MCP 層"]
+        M1["desktop-operator  ·  ローカル stdio サーバー"]
     end
 
-    subgraph Runtime["ランタイム層  •  desktop_operator_core/"]
-        D["デスクトップランタイム\n（アクション、観察、UIA）"]
-        E["マクロエンジン\n（再利用可能なパターン）"]
-        F["アーティファクトマネージャー\n（タスクスコープの一時ファイル）"]
+    subgraph RTM["ランタイム層"]
+        direction LR
+        R1["アクション & 観察"] & R2["マクロエンジン"] & R3["アーティファクト管理"]
     end
 
-    subgraph OS["Windows デスクトップ"]
-        G["アプリケーション"]
-        H["UI Automation ツリー"]
-        I["スクリーンショット / 状態"]
+    subgraph WIN["Windows デスクトップ"]
+        direction LR
+        W1["アプリケーション"] & W2["UI Automation"] & W3["スクリーンショット / 状態"]
     end
 
-    Agents --> Skill
-    Agents --> MCP
-    MCP --> Runtime
-    Runtime --> OS
+    AGT -->|読み込み| SKL
+    AGT -->|MCP 呼び出し| MCPL
+    MCPL --> RTM
+    RTM --> WIN
 ```
 
 ### 各層の責務
 
-**スキル層**
-- このスキルをいつ・どのように使うかを Agent に伝える
-- 「観察 → 計画 → 実行 → 検証」のループワークフローを定義する
-- MCP がまだ設定されていない場合のクライアント設定説明を提供する
-
-**MCP 層**
-- stdio を通じて安定したバージョン管理されたツールサーフェスを公開する
-- すべてのクライアントに対して構造的に一貫した結果を返す
-- サーバーのライフサイクルと接続管理を処理する
-
-**ランタイム層**
-- Win32 / UI Automation を通じて実際のデスクトップ操作を実行する
-- スクリーンショットと構造化されたウィンドウ状態をキャプチャする
-- タスクスコープのアーティファクトとタスク後のクリーンアップを管理する
+| 層 | 役割 |
+|---|---|
+| **スキル層** | このスキルをいつ・どのように使うかを Agent に伝える；観察→計画→実行→検証のループを定義；クライアント設定ガイドを提供 |
+| **MCP 層** | stdio を通じて安定したバージョン管理されたツールインターフェースを公開；すべてのクライアントに一貫した結果を返す |
+| **ランタイム層** | Win32 / UI Automation を通じて実際のデスクトップ操作を実行；スクリーンショットとウィンドウ状態をキャプチャ；アーティファクトのライフサイクルを管理 |
 
 ---
 
@@ -250,44 +221,17 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 .\scripts\setup_runtime.ps1
 ```
 
-カスタムディレクトリに明示的にインストールする場合：
-
-```powershell
-.\scripts\setup_runtime.ps1 -InstallDir "$HOME\.codex\skills\cua_desktop_operator_skill"
-```
-
 ### ステップ 3 — ローカル MCP サーバーの起動
 
 ```powershell
 .\scripts\start_mcp_server.ps1
 ```
 
-### ステップ 4 — Agent への接続
+### ステップ 4 — Agent に SKILL.md を読ませる
 
-各クライアントの設定については [`references/mcp-client-setup.md`](./references/mcp-client-setup.md) を参照してください。
+リポジトリルートの `SKILL.md` を Agent に指示します。Agent はそのファイルを読み込み、**自動的に自身を設定**します——利用可能なツール、推奨ワークフロー、ローカル MCP サーバーへの接続方法を理解します。
 
-| クライアント | 設定方法 |
-|---|---|
-| Codex | `agents/openai.yaml` マニフェストファイル |
-| Claude Code | `.mcp.json` または `settings.json` のサーバーエントリ |
-| Cursor | Cursor 設定の MCP サーバー設定 |
-| OpenCode | `agents/openai.yaml` マニフェストファイル |
-| その他 | リファレンスファイルの汎用 stdio ペイロード |
-
-### ステップ 5 — Agent による操作開始
-
-接続後、Agent は自動的に以下のループを実行します：
-
-```
-観察 → 計画 → 実行 → 検証 → （クリーンアップ）
-```
-
-1. `desktop_observe` を呼び出す — 現在のデスクトップ状態を取得
-2. 次の最小限の安全なステップを計画する
-3. MCP 経由で実行する
-4. `desktop_validate_state` で結果を検証する
-5. 完了するまで繰り返す
-6. 成功後に `desktop_cleanup_artifacts` を呼び出す
+手動での MCP 設定は不要です。スキルファイル自体が完全な自己記述型ドキュメントです。
 
 ---
 
@@ -401,18 +345,7 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 
 ---
 
-## ポータビリティとプライバシー
-
-このリポジトリはオープンソース配布のために準備されています。
-
-### 削除されたもの
-
-- ハードコードされたローカル Windows パス
-- ハードコードされたユーザープロファイル参照
-- リポジトリローカルのランタイム出力前提
-- 最終スキルパッケージと無関係なレガシー上流ディレクトリ
-
-### アーティファクトの動作
+## アーティファクト管理
 
 タスクのスクリーンショット、JSON 状態ファイル、実行ログはデフォルトで**一時アーティファクト**として扱われます。
 
@@ -455,14 +388,12 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 
 ---
 
-## 出典
+## 謝辞
 
-このプロジェクトは以下の公開されたデスクトップ Agent 研究から着想を得ています：
+このプロジェクトを可能にしてくれたオープンソースコミュニティと研究者の皆様に深く感謝します。特に：
 
-- [microsoft/cua_skill](https://github.com/microsoft/cua_skill)
-- [bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop)
-
-リリースされたワーキングツリーには、元の上流ソースツリーではなく、このリポジトリ独自のランタイム、MCP サーバー、およびスキルファイルが含まれています。
+- **[microsoft/cua_skill](https://github.com/microsoft/cua_skill)** — Computer Use Agent スキルのコンセプトと構造化されたスキルパッケージングアプローチを先駆けたことで、このリポジトリの設計に深い影響を与えてくれました。
+- **[bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop)** — GUI Agent 研究とデスクトップインタラクションパターンに関する優れた研究が、このプロジェクトの「観察優先」ワークフローの形成に影響を与えました。
 
 ---
 
@@ -477,3 +408,5 @@ AGPL を使用しているのは、再配布またはホストされた修正版
 ## Star の推移
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Marways7/cua_desktop_operator_skill&type=Date)](https://star-history.com/#Marways7/cua_desktop_operator_skill&Date)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E3A5F,50:4C1D95,100:7F1D1D&height=120&section=footer" width="100%"/>
