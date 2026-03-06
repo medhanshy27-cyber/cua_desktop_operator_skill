@@ -37,7 +37,7 @@
 1. skills ディレクトリへクローンします:
 
 ```powershell
-git clone <your-repo-url> "$HOME\\.codex\\skills\\cua_desktop_operator_skill"
+git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\\.codex\\skills\\cua_desktop_operator_skill"
 ```
 
 2. 依存関係をインストールします:
@@ -85,6 +85,4 @@ cua_desktop_operator_skill/
 
 ## Star History
 
-公開後に `OWNER/REPO` を実際のリポジトリ名へ置き換えてください:
-
-[![Star History Chart](https://api.star-history.com/svg?repos=OWNER/REPO&type=Date)](https://star-history.com/#OWNER/REPO&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Marways7/cua_desktop_operator_skill&type=Date)](https://star-history.com/#Marways7/cua_desktop_operator_skill&Date)

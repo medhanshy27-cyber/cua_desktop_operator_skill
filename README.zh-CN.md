@@ -37,7 +37,7 @@
 1. 把仓库克隆到某个 skills 目录，例如：
 
 ```powershell
-git clone <your-repo-url> "$HOME\\.codex\\skills\\cua_desktop_operator_skill"
+git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\\.codex\\skills\\cua_desktop_operator_skill"
 ```
 
 2. 安装依赖：
@@ -85,6 +85,4 @@ cua_desktop_operator_skill/
 
 ## Star History
 
-发布到 GitHub 后，把下面的 `OWNER/REPO` 替换成真实仓库名：
-
-[![Star History Chart](https://api.star-history.com/svg?repos=OWNER/REPO&type=Date)](https://star-history.com/#OWNER/REPO&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Marways7/cua_desktop_operator_skill&type=Date)](https://star-history.com/#Marways7/cua_desktop_operator_skill&Date)
