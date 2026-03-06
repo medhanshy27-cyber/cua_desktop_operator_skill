@@ -1,0 +1,13 @@
+interface:
+  display_name: "CUA Desktop Operator Skill"
+  short_description: "Windows desktop control through a local MCP runtime"
+  default_prompt: "Use $cua_desktop_operator_skill to observe the Windows desktop, plan the next safe GUI step, execute it through the local desktop-operator MCP server, and clean temporary task artifacts after success unless the user asked to keep them."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "desktop-operator"
+      description: "Local desktop operator MCP server for Windows desktop observation and automation."
+
+policy:
+  allow_implicit_invocation: true

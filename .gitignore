@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local environment files
+.env
+
+# Local MCP and agent config
+.mcp.json
+.cursor/
+opencode.json
+
+# Local build and runtime output
+dist/
+runtime/
+ops_*.json
+tmp_*.json
+desktop_operator_debug/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.log

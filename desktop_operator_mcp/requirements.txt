@@ -1,0 +1,6 @@
+mcp>=1.13.0
+pyautogui>=0.9.54
+pywinauto>=0.6.8
+pyperclip>=1.9.0
+pydantic>=2.8.0
+pywin32>=310
