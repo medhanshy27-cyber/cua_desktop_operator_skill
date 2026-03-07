@@ -403,9 +403,13 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 
 AGPL을 사용하는 것은 재배포되거나 호스팅된 수정 버전이 동일한 라이선스 하에 계속 오픈 상태를 유지하도록 하기 위함입니다.
 
+Copyright (C) 2026 Marways7 and contributors.
+
 ---
 
 ## Star 히스토리
+
+이 프로젝트가 도움이 됐다면 GitHub에서 Star를 눌러 주세요.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Marways7/cua_desktop_operator_skill&type=Date)](https://star-history.com/#Marways7/cua_desktop_operator_skill&Date)
 

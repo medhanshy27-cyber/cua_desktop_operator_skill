@@ -403,9 +403,13 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 
 使用 AGPL 是為了確保散布或託管的修改版本在相同授權條款下繼續保持開放。
 
+Copyright (C) 2026 Marways7 及貢獻者。
+
 ---
 
 ## Star 歷史
+
+如果這個專案對你有幫助，歡迎在 GitHub 上點一個 Star。
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Marways7/cua_desktop_operator_skill&type=Date)](https://star-history.com/#Marways7/cua_desktop_operator_skill&Date)
 

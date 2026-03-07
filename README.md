@@ -403,9 +403,13 @@ This project is distributed under the [GNU Affero General Public License v3.0](.
 
 AGPL is used here so that redistributed or hosted modified versions remain open under the same license.
 
+Copyright (C) 2026 Marways7 and contributors.
+
 ---
 
 ## Star History
+
+If this project helps you, please consider giving it a star on GitHub.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Marways7/cua_desktop_operator_skill&type=Date)](https://star-history.com/#Marways7/cua_desktop_operator_skill&Date)
 
