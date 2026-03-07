@@ -1,25 +1,10 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:134E4A,50:1E3A5F,100:4C1D95&height=200&section=header&text=CUA%20Desktop%20Operator%20Skill&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=40&desc=Windows%20%E5%84%AA%E5%85%88%20%C2%B7%20MCP%20%E5%8E%9F%E7%94%9F%20%C2%B7%20Agent%20%E4%B8%AD%E7%AB%8B&descAlignY=58&descSize=18" width="100%"/>
+
 <br/>
 
-```
- ██████╗██╗   ██╗ █████╗     ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗
-██╔════╝██║   ██║██╔══██╗    ██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
-██║     ██║   ██║███████║    ██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
-██║     ██║   ██║██╔══██║    ██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝
-╚██████╗╚██████╔╝██║  ██║    ██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║
- ╚═════╝ ╚═════╝ ╚═╝  ╚═╝    ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝
-                         ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗ ██████╗ ██████╗
-                        ██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
-                        ██║   ██║██████╔╝█████╗  ██████╔╝███████║   ██║   ██║   ██║██████╔╝
-                        ██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██╔══██║   ██║   ██║   ██║██╔══██╗
-                        ╚██████╔╝██║     ███████╗██║  ██║██║  ██║   ██║   ╚██████╔╝██║  ██║
-                         ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
-```
-
-### **Windows 優先 · MCP 原生 · Agent 中立**
-
-> 一套執行層，適配所有 MCP 相容 AI Agent，無需任何雲端依賴。
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=3000&pause=800&color=0D9488&center=true&vCenter=true&width=600&lines=One+execution+layer.+Any+MCP-capable+agent.;Zero+cloud+dependency.+100%25+local.;Codex+%C2%B7+Claude+Code+%C2%B7+Cursor+%C2%B7+OpenCode)](https://github.com/Marways7/cua_desktop_operator_skill)
 
 <br/>
 
@@ -144,56 +129,42 @@ agent（Codex / Claude Code / Cursor / OpenCode / ...）
 
 ```mermaid
 flowchart TB
-    subgraph Agents["AI Agent 層"]
-        A1["Codex"]
-        A2["Claude Code"]
-        A3["Cursor"]
-        A4["OpenCode"]
-        A5["其他 MCP 客戶端"]
+    subgraph AGT["AI Agent 層"]
+        direction LR
+        A1["Codex"] & A2["Claude Code"] & A3["Cursor"] & A4["OpenCode"]
     end
 
-    subgraph Skill["技能層  •  SKILL.md + references/ + scripts/"]
-        B["技能介面\n（工作流、策略、設定指南）"]
+    subgraph SKL["技能層"]
+        S1["SKILL.md · references/ · scripts/"]
     end
 
-    subgraph MCP["MCP 層  •  desktop_operator_mcp/"]
-        C["desktop-operator\nMCP 伺服器（stdio）"]
+    subgraph MCPL["MCP 層"]
+        M1["desktop-operator  ·  本地 stdio 伺服器"]
     end
 
-    subgraph Runtime["執行時層  •  desktop_operator_core/"]
-        D["桌面執行時\n（動作、觀察、UIA）"]
-        E["巨集引擎\n（可複用模式）"]
-        F["產物管理器\n（任務級臨時檔案）"]
+    subgraph RTM["執行時層"]
+        direction LR
+        R1["動作 & 觀察"] & R2["巨集引擎"] & R3["產物管理器"]
     end
 
-    subgraph OS["Windows 桌面"]
-        G["應用程式"]
-        H["UI Automation 樹"]
-        I["截圖 / 狀態"]
+    subgraph WIN["Windows 桌面"]
+        direction LR
+        W1["應用程式"] & W2["UI Automation"] & W3["截圖 / 狀態"]
     end
 
-    Agents --> Skill
-    Agents --> MCP
-    MCP --> Runtime
-    Runtime --> OS
+    AGT -->|讀取| SKL
+    AGT -->|MCP 呼叫| MCPL
+    MCPL --> RTM
+    RTM --> WIN
 ```
 
 ### 各層職責
 
-**技能層**
-- 告知 Agent 何時及如何使用本技能
-- 定義「觀察 → 規劃 → 執行 → 驗證」循環工作流
-- 在 MCP 尚未設定時提供客戶端設定說明
-
-**MCP 層**
-- 透過 stdio 公開穩定、版本化的工具介面
-- 向所有客戶端回傳結構一致的結果
-- 處理伺服器生命週期與連線管理
-
-**執行時層**
-- 透過 Win32 / UI Automation 執行真實桌面操作
-- 擷取截圖和結構化視窗狀態
-- 管理任務級產物與任務後清理
+| 層級 | 職責 |
+|---|---|
+| **技能層** | 告知 Agent 何時及如何使用本技能；定義「觀察 → 規劃 → 執行 → 驗證」循環；提供客戶端設定說明 |
+| **MCP 層** | 透過 stdio 公開穩定、版本化的工具介面；向所有客戶端回傳結構一致的結果 |
+| **執行時層** | 透過 Win32 / UI Automation 執行真實桌面操作；擷取截圖和視窗狀態；管理任務級產物生命週期 |
 
 ---
 
@@ -250,44 +221,17 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 .\scripts\setup_runtime.ps1
 ```
 
-若要明確安裝到自訂目錄：
-
-```powershell
-.\scripts\setup_runtime.ps1 -InstallDir "$HOME\.codex\skills\cua_desktop_operator_skill"
-```
-
 ### 第三步 — 啟動本地 MCP 伺服器
 
 ```powershell
 .\scripts\start_mcp_server.ps1
 ```
 
-### 第四步 — 連接到您的 Agent
+### 第四步 — 讓 Agent 讀取 SKILL.md
 
-請閱讀 [`references/mcp-client-setup.md`](./references/mcp-client-setup.md) 取得各客戶端設定說明。
+將 Agent 指向倉庫根目錄的 `SKILL.md`，Agent 會讀取該檔案並**自動完成配置**——理解可用工具、推薦工作流以及如何連線到本地 MCP 伺服器。
 
-| 客戶端 | 設定方式 |
-|---|---|
-| Codex | `agents/openai.yaml` 清單檔案 |
-| Claude Code | `.mcp.json` 或 `settings.json` 伺服器項目 |
-| Cursor | Cursor 設定中的 MCP 伺服器設定 |
-| OpenCode | `agents/openai.yaml` 清單檔案 |
-| 其他 | 參考文件中的通用 stdio 設定 |
-
-### 第五步 — 讓 Agent 開始操作
-
-連線成功後，Agent 將自動執行以下循環：
-
-```
-觀察 → 規劃 → 執行 → 驗證 → （清理）
-```
-
-1. 呼叫 `desktop_observe` — 取得目前桌面狀態
-2. 規劃下一步最小安全操作
-3. 透過 MCP 執行
-4. 用 `desktop_validate_state` 驗證結果
-5. 循環直至完成
-6. 成功後呼叫 `desktop_cleanup_artifacts`
+無需手動配置 MCP。技能檔案本身即為完整的自描述文件。
 
 ---
 
@@ -401,18 +345,7 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 
 ---
 
-## 可攜性與隱私
-
-本倉庫已為開源發布做好準備。
-
-### 已移除內容
-
-- 硬式編碼的本地 Windows 路徑
-- 硬式編碼的使用者設定檔引用
-- 倉庫本地執行時輸出假設
-- 與最終技能套件無關的歷史上游目錄
-
-### 產物行為
+## 產物管理
 
 任務截圖、JSON 狀態檔案和執行日誌預設作為**臨時產物**處理。
 
@@ -455,14 +388,12 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 
 ---
 
-## 專案溯源
+## 致謝
 
-本專案受以下公開桌面 Agent 研究的啟發：
+感謝開源社群和相關研究者的卓越工作，使本專案得以實現。特別感謝：
 
-- [microsoft/cua_skill](https://github.com/microsoft/cua_skill)
-- [bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop)
-
-發布的工作樹包含本倉庫自有的執行時、MCP 伺服器和技能檔案，而非原始上游原始碼樹。
+- **[microsoft/cua_skill](https://github.com/microsoft/cua_skill)** — 開創了 Computer Use Agent 技能概念及結構化技能打包方式，深刻啟發了本倉庫的設計思路。
+- **[bytedance/UI-TARS-desktop](https://github.com/bytedance/UI-TARS-desktop)** — 在 GUI Agent 研究和桌面互動模式方面的出色工作，影響了本專案「觀察優先」工作流的形成。
 
 ---
 
@@ -477,3 +408,5 @@ git clone https://github.com/Marways7/cua_desktop_operator_skill "$HOME\.cursor\
 ## Star 歷史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Marways7/cua_desktop_operator_skill&type=Date)](https://star-history.com/#Marways7/cua_desktop_operator_skill&Date)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4C1D95,50:1E3A5F,100:134E4A&height=120&section=footer" width="100%"/>
